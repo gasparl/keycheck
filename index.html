@@ -12,13 +12,25 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('input_id').addEventListener('keydown', function(e) {
                 let time = Date.now() - start;
-                document.getElementById('keydowns_id').textContent += " " + e.key;
-                document.getElementById('keydownsms_id').textContent += " " + e.key + "[" + time + "]";
+                let key;
+                if (e.code === "Space") {
+                    key = "Space";
+                } else {
+                    key = e.key;
+                }
+                document.getElementById('keydowns_id').textContent += " " + key;
+                document.getElementById('keydownsms_id').textContent += " " + key + "[" + time + "]";
             });
             document.getElementById('input_id').addEventListener('keyup', function(e) {
                 let time = Date.now() - start;
-                document.getElementById('keyups_id').textContent += " " + e.key;
-                document.getElementById('keyupsms_id').textContent += " " + e.key + "[" + time + "]";
+                let key;
+                if (e.code === "Space") {
+                    key = "Space";
+                } else {
+                    key = e.key;
+                }
+                document.getElementById('keyups_id').textContent += " " + key;
+                document.getElementById('keyupsms_id').textContent += " " + key + "[" + time + "]";
             });
 
 
