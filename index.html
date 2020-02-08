@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Keydown Keyup Display</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Gaspar Lukacs">
+    <meta name="keywords" content="lie detection, deception detection, internship, thesis, deception, vienna, university, research, reaction time, rt, association, experiment">
+    <meta name="description" content="Display of pressed keyboard keys (keyup and keydown, along with timing).">
+
+    <script>
+        let start = Date.now();
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('input_id').addEventListener('keydown', function(e) {
+                let time = Date.now() - start;
+                document.getElementById('keydowns_id').textContent += " " + e.key;
+                document.getElementById('keydownsms_id').textContent += " " + e.key + "[" + time + "]";
+            });
+            document.getElementById('input_id').addEventListener('keyup', function(e) {
+                let time = Date.now() - start;
+                document.getElementById('keyups_id').textContent += " " + e.key;
+                document.getElementById('keyupsms_id').textContent += " " + e.key + "[" + time + "]";
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <h1>Type anything in the input box</h1>
+        <br>
+        <input id="input_id">
+        <br>
+        <br>
+        <hr />
+        <br>
+        <b>Keydowns:</b><span style="" id='keydowns_id'></span>
+        <br>
+        <br>
+        <b>Keyups:</b><span style="" id='keyups_id'></span>
+        <br>
+        <br>
+        <hr />
+        <br>
+        <b>Keydowns[ms]:</b><span style="" id='keydownsms_id'></span>
+        <br>
+        <br>
+        <b>Keyups[ms]:</b><span style="" id='keyupsms_id'></span>
+    </div>
+</body>
