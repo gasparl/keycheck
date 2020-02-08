@@ -1,1 +1,1 @@
-A simple script to display pressed keyboard keys (keyup and keydown, along with timing).
+A simple script to display pressed keyboard keys (keyup and keydown, along with timing) online: https://gasparl.github.io/keycheck/
