@@ -12,6 +12,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('input_id').addEventListener('keydown', function(e) {
                 let time = Date.now() - start;
+                console.log("keydown: ", e);
+                console.log("-time:", time);
                 let key;
                 if (e.code === "Space") {
                     key = "Space";
@@ -24,6 +26,8 @@
             document.getElementById('input_id').addEventListener('keyup', function(e) {
                 let time = Date.now() - start;
                 let key;
+                console.log("keyup: ", e);
+                console.log("-time:", time);
                 if (e.code === "Space") {
                     key = "Space";
                 } else {
